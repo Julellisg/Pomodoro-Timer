@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pomodoro Timer</title>
+</head>
+
+<!-- !  USE DIALOG -->
+<!-- Todo:  -->
+
+<body>
+    <div>
+        <div class="timer">
+            <span id="time"></span>
+        </div>
+
+        <div class="controls">
+            <button onclick="startTimer()">Start</button>
+            <button onclick="resetTimer()">Reset</button>
+            <button onclick="pauseTimer()">Pause</button>
+        </div>
+
+        <div class="settings">
+            <label for="workTime">Work Time:</label>
+            <input type="number" id="workTime" value="25">
+            <label for="restTime">Rest Time:</label>
+            <input type="number" id="restTime" value="5">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

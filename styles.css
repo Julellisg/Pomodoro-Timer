@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    font-family: 'Rubik', 'Segoe UI', sans-serif;
+    color: rgb(175, 69, 95);
+    background-color: rgb(49, 33, 39);
+}
+
+div {
+    /* background-color: rgba(14, 255, 54, 0.2); */
+    border: 1px solid rgb(255, 0, 212);
+}
+
+.timer {
+    font-size: 160px;
+}
