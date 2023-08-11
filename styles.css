@@ -8,9 +8,35 @@ body {
 
 div {
     /* background-color: rgba(14, 255, 54, 0.2); */
-    border: 1px solid rgb(255, 0, 212);
+    border: 1px solid rgba(255, 0, 212, 0.2);
+}
+
+button {
+    font-family: 'Rubik', 'Segoe UI', sans-serif;
+    font-size: 16px;
+    width: 80px;
+    padding: 8px;
+
+    color: rgb(175, 69, 95);
+    border: 2px solid rgb(175, 69, 95);
+    border-radius: 6px;
+    background-color: rgb(49, 33, 39);
+}
+
+button:hover {
+    color: rgb(200, 149, 111);
+    border: 2px solid rgb(200, 149, 111);
 }
 
 .timer {
+    display: flex;
+    flex-direction: column;
+}
+
+#session {
+    font-size: 40px;
+}
+
+#time {
     font-size: 160px;
 }
