@@ -13,9 +13,6 @@ body {
     padding: 0;
 }
 
-div {
-    /* border: 1px solid rgba(255, 0, 212, 0.2); */
-}
 
 .page-wrapper {
     display: flex;
