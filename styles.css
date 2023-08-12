@@ -13,7 +13,6 @@ body {
     padding: 0;
 }
 
-
 .page-wrapper {
     display: flex;
     flex-direction: column;
@@ -29,12 +28,14 @@ body {
 
     width: 600px;
     margin: 20px;
-    /* border: 1px solid rgba(255, 0, 212, 0.2); */
+    border: 2px solid rgba(175, 69, 95, 0.2);
+    border-radius: 10px;
 }
 
 /* ! Timer div */
-.center {
+.status {
     text-align: center;
+    margin-top: 14px;
 }
 
 #time {
@@ -46,25 +47,33 @@ body {
 }
 
 /* ! Controls div */
-button {
+.button {
     font-family: inherit;
     font-size: 16px;
     width: 80px;
     padding: 8px;
+    cursor: pointer;
 
     color: rgb(175, 69, 95);
     border: 2px solid rgb(175, 69, 95);
     border-radius: 10px;
     background-color: rgb(49, 33, 39);
+
+    transition: ease-in 0.1s color, ease-in 0.1s border;
 }
 
-button:hover {
+.button:hover {
     color: rgb(200, 149, 111);
     border: 2px solid rgb(200, 149, 111);
 }
 
-/* ! Settings (inputs) div */
-.settings {
+.button:active {
+    color: rgb(175, 69, 95);
+    border: 2px solid rgb(175, 69, 95);
+}
+
+/* ! Inputs div */
+.inputs {
     display: flex;
     flex-direction: column;
     margin-top: 14px;
@@ -78,18 +87,54 @@ button:hover {
     /* Adjust spacing between groups */
 }
 
-.settings label {
-    margin-right: 10px;
+.inputs label {
+    margin-right: 6px;
     /* Adjust spacing between label and input */
 }
 
-.settings input[type="number"] {
+.inputs input[type="number"] {
     font-family: inherit;
     padding: 6px;
     width: 32px;
     border-radius: 6px;
 }
 
-.settings input[type="number"]:focus {
+.inputs input[type="number"]:focus {
     border-color: rgb(255, 189, 141);
+}
+
+/* ! More Options */
+.accordion {
+    margin: 14px;
+    width: 160px;
+}
+
+.active, .accordion:hover {
+    color: rgb(200, 149, 111);
+    border: 2px solid rgb(200, 149, 111);
+}
+
+.accordion:after {
+    content: 'More Options \00a0 [ + ]';
+}
+
+.active:after {
+    content: 'More Options \00a0 [ - ]';
+}
+
+.panel {
+    padding: 6px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.panel input[type="checkbox"] {
+    margin-bottom: 12px;
+}
+
+.panel h3 {
+    text-align: center;
+    text-decoration: underline;
+    margin: 10px 0;
 }

@@ -10,8 +10,14 @@ const resetButton = document.getElementById('reset');
 const workTimeInput = document.getElementById('workTime');
 const restTimeInput = document.getElementById('restTime');
 const setCountInput = document.getElementById('setCount');
+// More options / Accesibility div
+const acc = document.getElementsByClassName("accordion");
+const option1Checkbox = document.querySelector('input[name="option1"]');
+const sound1 = document.getElementById('sound1');
 
-// No values
+var i;
+
+// Time Calculation variables
 var w = 0;  // MINUTES
 var workTime = 0; // MINUTES
 var r = 0;  // MINUTES
@@ -59,6 +65,7 @@ function startTimer() {
 
                     // ! Switching to RESTING
                     if(isWorking) {
+                        if(option1Checkbox.checked) playSFX(); 
                         isWorking = false;
                         sessionDisplay.innerHTML = "Resting";
                         time = restTime;
@@ -66,6 +73,7 @@ function startTimer() {
                     } 
                     // ! Switching to WORKING
                     else {
+                        if (option1Checkbox.checked) playSFX(); 
                         isWorking = true;
                         sessionDisplay.innerHTML = "Working";
                         time = workTime;
@@ -76,6 +84,7 @@ function startTimer() {
                             s++;
                             updateProgressDisplay();
                             if (s == set) {
+                                if (option1Checkbox.checked) playSFX(); 
                                 clearInterval(intervalId); // Stop the interval after the specified number of sets
                                 s = 0;
                                 sessionDisplay.innerHTML = "Done!"
@@ -109,6 +118,7 @@ function skipTimer() {
 
     // ! Switching to RESTING
     if (isWorking) {
+        if (option1Checkbox.checked) playSFX(); 
         isWorking = false;
         sessionDisplay.innerHTML = "Resting";
         time = restTime;
@@ -116,6 +126,7 @@ function skipTimer() {
     }
     // ! Switching to WORKING
     else {
+        if (option1Checkbox.checked) playSFX(); 
         isWorking = true;
         sessionDisplay.innerHTML = "Working";
         time = workTime;
@@ -126,6 +137,7 @@ function skipTimer() {
             s++;
             updateProgressDisplay();
             if (s == set) {
+                if (option1Checkbox.checked) playSFX(); 
                 clearInterval(intervalId); // Stop the interval after the specified number of sets
                 s = 0;
                 sessionDisplay.innerHTML = "Done!"
@@ -163,8 +175,6 @@ function resetTimer() {
 
     startButton.textContent = "Start";
 }
-
-
 
 function updateTimerDisplay(time) {
     const hours = Math.floor((time / 60) / 60);
@@ -216,6 +226,26 @@ setCountInput.addEventListener('keydown', function (event) {
     }
 });
 
+function playSFX() {
+    sound1.currentTime = 0;
+    sound1.play();
+    
+    sound1.addEventListener('ended', function () {
+        sound1.pause();
+    });
+}
+
+function toggleSound(soundId, checked) {
+    const sound = document.getElementById(soundId);
+    if (checked) {
+        sound.currentTime = 5;
+        sound.play();
+    } else {
+        sound.pause();
+        sound.currentTime = 5;
+    }
+}
+
 function init() {
     // Set up the timer for when the user first loads up the page:
     w = parseInt(workTimeInput.value, 10);
@@ -226,6 +256,19 @@ function init() {
     restTime = r * 60;
     time = workTime;
     updateTimerDisplay(time);
+
+    // Set up accordion
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
 }
 
 init();
