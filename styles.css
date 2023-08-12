@@ -1,20 +1,56 @@
+/* 
+- For responsive design, change the width and font sizes of everything to match the phone screen.
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
     font-family: 'Rubik', 'Segoe UI', sans-serif;
     color: rgb(175, 69, 95);
     background-color: rgb(49, 33, 39);
+
+    margin: 0;
+    padding: 0;
 }
 
 div {
-    /* background-color: rgba(14, 255, 54, 0.2); */
-    margin: 10px;
-    border: 1px solid rgba(255, 0, 212, 0.2);
-    float: center;
+    /* border: 1px solid rgba(255, 0, 212, 0.2); */
 }
 
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 600px;
+    margin: 20px;
+    /* border: 1px solid rgba(255, 0, 212, 0.2); */
+}
+
+/* ! Timer div */
+.center {
+    text-align: center;
+}
+
+#time {
+    font-size: 160px;
+}
+
+#session {
+    font-size: 40px;
+}
+
+/* ! Controls div */
 button {
-    font-family: 'Rubik', 'Segoe UI', sans-serif;
+    font-family: inherit;
     font-size: 16px;
     width: 80px;
     padding: 8px;
@@ -30,15 +66,33 @@ button:hover {
     border: 2px solid rgb(200, 149, 111);
 }
 
-.timer {
+/* ! Settings (inputs) div */
+.settings {
     display: flex;
     flex-direction: column;
+    margin-top: 14px;
 }
 
-#session {
-    font-size: 40px;
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+    /* Adjust spacing between groups */
 }
 
-#time {
-    font-size: 160px;
+.settings label {
+    margin-right: 10px;
+    /* Adjust spacing between label and input */
+}
+
+.settings input[type="number"] {
+    font-family: inherit;
+    padding: 6px;
+    width: 32px;
+    border-radius: 6px;
+}
+
+.settings input[type="number"]:focus {
+    border-color: rgb(255, 189, 141);
 }

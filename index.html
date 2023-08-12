@@ -12,26 +12,45 @@
 <!-- Todo:  -->
 
 <body>
-    <div>
-        <div class="timer">
-            <span id="session">Working</span>
-            <span id="time"></span>
-        </div>
 
-        <div class="controls">
-            <button class="button" id="start" onclick="startTimer()">Start</button>
-            <button class="button" id="reset" onclick="resetTimer()">Reset</button>            
-        </div>
+    <div class="page-wrapper">
+        <div id="main-content">
+            <div class="timer">
+                <div class="center">
+                    <span id="session">Working</span>
+                    <span id="progress"></span>
+                </div>
+                <span id="time"></span>
+            </div>
+        
+            <div class="controls">
+                <button class="button" id="start" onclick="startTimer()">Start</button>
+                <button class="button" id="skip" onclick="skipTimer()">Skip</button>
+                <button class="button" id="reset" onclick="resetTimer()">Reset</button>
+            </div>
+        
+            <div class="settings">
+                <div id="inputs">
+                    <div class="input-group">
+                        <label for="workTime">Work Time:</label>
+                        <input type="number" id="workTime" value="25">
+                    </div>
+                    <div class="input-group">
+                        <label for="restTime">Rest Time:</label>
+                        <input type="number" id="restTime" value="5">
+                    </div>
+                    <div class="input-group">
+                        <label for="setCount">Sets:</label>
+                        <input type="number" id="setCount" value="3">
+                    </div>
+                </div>
+            </div>
 
-        <div class="settings">
-            <label for="workTime">Work Time:</label>
-            <input type="number" id="workTime" value="1">
-            <label for="restTime">Rest Time:</label>
-            <input type="number" id="restTime" value="1">
-            <label for="restTime">Sets:</label>
-            <input type="number" id="setCount" value="1">
+            
+
         </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 
