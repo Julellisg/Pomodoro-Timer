@@ -8,7 +8,9 @@ body {
 
 div {
     /* background-color: rgba(14, 255, 54, 0.2); */
+    margin: 10px;
     border: 1px solid rgba(255, 0, 212, 0.2);
+    float: center;
 }
 
 button {
@@ -19,7 +21,7 @@ button {
 
     color: rgb(175, 69, 95);
     border: 2px solid rgb(175, 69, 95);
-    border-radius: 6px;
+    border-radius: 10px;
     background-color: rgb(49, 33, 39);
 }
 
