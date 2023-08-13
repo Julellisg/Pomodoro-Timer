@@ -18,9 +18,9 @@ Visit here: https://julellisg.github.io/Pomodoro-Timer/
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## :rocket: Usage
-<di style="display: flex; justify-content: center; align-items: center;">
+<div style="display: flex; justify-content: center; align-items: center;">
     <img src="src/2.png" alt="Second Image" width="450"/>
-</di
+</div>
 
 1. Progression. Informs you if you are **WORKING** or **RESTING**. The smaller number in square brackets represents what set you are currently on. 
 2. You have the freedom of **pausing/resuming,** **skipping** to the next work/rest session, and **resetting** the timer completely. 
