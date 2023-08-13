@@ -48,8 +48,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## :phone: Contact
-Julian Ellis Geronimo - julianellisg@gmail.com
-Project Link - https://github.com/Julellisg/Pomodoro-Timer
+- Julian Ellis Geronimo - julianellisg@gmail.com
+- Project Link - https://github.com/Julellisg/Pomodoro-Timer
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## :book: Acknowledgements
