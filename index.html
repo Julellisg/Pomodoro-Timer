@@ -112,7 +112,8 @@
                     <label>
                         <div class="sound-container">
                             <label class="checkbox-label">
-                                <input type="checkbox" name="option5" onchange="toggleSound('sound5', this.checked)">River Stream
+                                <input type="checkbox" name="option5"
+                                    onchange="toggleSound('sound5', this.checked)">River Stream
                             </label>
                             <div class="range-container">
                                 <input type="range" min="0.05" max="1" step="0.05" value="0.25" name="range5"
@@ -125,24 +126,28 @@
                     <!-- Color Themes -->
                     <h3>Color Themes</h3>
                     <div class="color-theme-container">
-                        <label id="theme1">
-                            <input type="radio" name="colorTheme" value="theme1" checked
-                                onchange="applyColorTheme('Raki')"> Raki
+                        <label>
+                            <input type="radio" name="colorTheme" value="Raki" id="Raki"
+                                onchange="applyColorTheme('Raki')" checked> Raki
                         </label>
-                        <label id="theme2">
-                            <input type="radio" name="colorTheme" value="theme2" onchange="applyColorTheme('Lottie')">
+                        <label>
+                            <input type="radio" name="colorTheme" value="Lottie" id="Lottie"
+                                onchange="applyColorTheme('Lottie')">
                             Lottie
                         </label>
-                        <label id="theme3">
-                            <input type="radio" name="colorTheme" value="theme3" onchange="applyColorTheme('Nebi')">
+                        <label>
+                            <input type="radio" name="colorTheme" value="Nebi" id="Nebi"
+                                onchange="applyColorTheme('Nebi')">
                             Nebi
                         </label>
-                        <label id="theme4">
-                            <input type="radio" name="colorTheme" value="theme4" onchange="applyColorTheme('Chiaki')">
+                        <label>
+                            <input type="radio" name="colorTheme" value="Chiaki" id="Chiaki"
+                                onchange="applyColorTheme('Chiaki')">
                             Chiaki
                         </label>
-                        <label id="theme5">
-                            <input type="radio" name="colorTheme" value="theme5" onchange="applyColorTheme('Miuna')">
+                        <label>
+                            <input type="radio" name="colorTheme" value="Miuna" id="Miuna"
+                                onchange="applyColorTheme('Miuna')">
                             Miuna
                         </label>
                     </div>
@@ -160,10 +165,22 @@
                     loop></audio>
 
             </div>
-            <!-- Main Content -->
+            <!-- Panel -->
+
         </div>
-        <!-- Page Wrapper -->
+        <!-- Main Content -->
+
     </div>
+    <!-- Page Wrapper -->
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://github.com/Julellisg" target="_blank">Julian Ellis Geronimo &copy; 2023</a>
+                <a href="https://github.com/Julellisg/Pomodoro-Timer" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

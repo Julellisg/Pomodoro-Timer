@@ -14,6 +14,7 @@ const setCountInput = document.getElementById('setCount');
 const acc = document.getElementsByClassName("accordion");
 const option1Checkbox = document.querySelector('input[name="option1"]');
 const sound1 = document.getElementById('sound1');
+let themesData = null;
 
 var i;
 
@@ -269,7 +270,7 @@ function applyColorTheme(themeName) {
         document.body.style.color = selectedTheme.text;
 
         const mainContent = document.getElementById('main-content');
-        mainContent.style.border = `2px solid ${selectedTheme.border}`;
+        mainContent.style.border = `4px solid ${selectedTheme.border}`;
 
         // ! Buttons
         const buttons = document.querySelectorAll('.button');
@@ -303,11 +304,45 @@ function applyColorTheme(themeName) {
         });
 
         // ! Active button
-        const activeElements = document.querySelectorAll('.active');
-        activeElements.forEach(element => {
-            activeElements.style.color = selectedTheme.hover;
-            activeElements.style.border = `2px solid ${selectedTheme.hover}`;
+        // const activeElements = document.querySelectorAll('.active');
+        // activeElements.forEach(element => {
+        //     activeElements.style.color = selectedTheme.hover;
+        //     activeElements.style.border = `2px solid ${selectedTheme.hover}`;
+        // });
+
+        // ! Footer
+        const footer = document.querySelector('footer');
+        footer.style.backgroundColor = selectedTheme.background;
+        footer.style.borderTopColor = selectedTheme.border;
+
+        const footerLinks = document.querySelectorAll('.footer-links a');
+        footerLinks.forEach(link => {
+            link.style.color = selectedTheme.text;
         });
+        
+        localStorage.setItem('selectedTheme', themeName);
+    }
+}
+
+// Function to load the selected theme from localStorage
+function loadSelectedTheme() {
+    var selectedTheme = localStorage.getItem('selectedTheme');
+
+    if (typeof selectedTheme === 'string') {
+        console.log("if");
+        var previousTheme = document.querySelector(`#${selectedTheme}`);
+        previousTheme.checked = true;
+        applyColorTheme(selectedTheme); // Apply the theme
+    } else {
+        console.log("else");
+        // No stored theme, apply the first theme and store it
+        var firstThemeRadio = document.querySelector('[name="colorTheme"]:checked');
+        if (firstThemeRadio) {
+            var defaultTheme = firstThemeRadio.value;
+            firstThemeRadio.checked = true;
+            localStorage.setItem('selectedTheme', defaultTheme); // Store the default theme
+            applyColorTheme(defaultTheme); // Apply the default theme
+        }
     }
 }
 
@@ -343,6 +378,7 @@ function init() {
         .then(response => response.json())
         .then(data => {
             themesData = data;
+            loadSelectedTheme();
         })
         .catch(error => console.error('Error loading themes:', error));
 }
