@@ -185,3 +185,24 @@ body {
     display: block;
     padding: 8px 0;
 }
+
+/* ! Media Queries */
+@media (max-width: 700px) {
+    #main-content {
+        width: 400px;
+    }
+
+    #time {
+        font-size: 140px;
+    }
+}
+
+@media (max-width: 450px) {
+    #main-content {
+        width: 350px;
+    }
+
+    #time {
+        font-size: 120px;
+    }
+}
