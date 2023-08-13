@@ -15,6 +15,7 @@ Visit here: https://julellisg.github.io/Pomodoro-Timer/
     <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white">
     <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
 </div>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## :rocket: Usage
 <div style="display: flex; justify-content: center; align-items: center;">
