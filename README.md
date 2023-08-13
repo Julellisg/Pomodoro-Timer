@@ -18,10 +18,9 @@ Visit here: https://julellisg.github.io/Pomodoro-Timer/
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## :rocket: Usage
-<div style="display: flex; justify-content: center; align-items: center;">
-    <img src="src/2.png" alt="First Image" width="450"/>
-</div>
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<di style="display: flex; justify-content: center; align-items: center;">
+    <img src="src/2.png" alt="Second Image" width="450"/>
+</di
 
 1. Progression. Informs you if you are **WORKING** or **RESTING**. The smaller number in square brackets represents what set you are currently on. 
 2. You have the freedom of **pausing/resuming,** **skipping** to the next work/rest session, and **resetting** the timer completely. 
@@ -29,7 +28,7 @@ Visit here: https://julellisg.github.io/Pomodoro-Timer/
 4. Button that is currently **unactive**. Pressing it reveals the accordion that reveals more options.
 
 <div style="display: flex; justify-content: center; align-items: center;">
-    <img src="src/3.png" alt="First Image" width="450"/>
+    <img src="src/3.png" alt="Third Image" width="450"/>
 </div>
 
 5. Button that is currently **active**.
@@ -39,8 +38,8 @@ Visit here: https://julellisg.github.io/Pomodoro-Timer/
 (Raki is my favorite :blush:)
 
 <div style="display: flex; justify-content: center; align-items: center;">
-    <img src="src/4.png" alt="First Image" width="400"/>
-    <img src="src/5.png" alt="First Image" width="400"/>
+    <img src="src/4.png" alt="Fourth Image" width="400"/>
+    <img src="src/5.png" alt="Fifth Image" width="400"/>
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
