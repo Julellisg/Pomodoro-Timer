@@ -329,12 +329,10 @@ function loadSelectedTheme() {
     var selectedTheme = localStorage.getItem('selectedTheme');
 
     if (typeof selectedTheme === 'string') {
-        console.log("if");
         var previousTheme = document.querySelector(`#${selectedTheme}`);
         previousTheme.checked = true;
         applyColorTheme(selectedTheme); // Apply the theme
     } else {
-        console.log("else");
         // No stored theme, apply the first theme and store it
         var firstThemeRadio = document.querySelector('[name="colorTheme"]:checked');
         if (firstThemeRadio) {
