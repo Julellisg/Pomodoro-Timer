@@ -63,5 +63,5 @@ All sound effect(s) and ambient noises are taken from [Pixabay](https://pixabay.
 - **Forest, Wind, and Birds** - [Forest wind and birds](https://pixabay.com/sound-effects/forest-wind-and-birds-6881/) - By [Pixabay](https://pixabay.com/users/pixabay-1/)
 - **River Stream** - [Relaxing, Mountains, Rivers, Streams, Running Water](https://pixabay.com/sound-effects/relaxing-mountains-rivers-streams-running-water-18178/) - By [Pixabay](https://pixabay.com/users/pixabay-1/)
 
-And the color themes are named after some digital idols of PixelLink.
+And the color themes are named after some virtual idols of PixelLink.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
