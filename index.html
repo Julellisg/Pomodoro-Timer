@@ -23,14 +23,14 @@
                 </div>
                 <span id="time"></span>
             </div>
-        
+
             <!-- ! Controls -->
             <div class="controls">
                 <button class="button" id="start" onclick="startTimer()">Start</button>
                 <button class="button" id="skip" onclick="skipTimer()">Skip</button>
                 <button class="button" id="reset" onclick="resetTimer()">Reset</button>
             </div>
-        
+
             <!-- ! Inputs -->
             <div class="inputs">
                 <div id="inputs">
@@ -54,39 +54,117 @@
             <button class="button accordion"></button>
             <div class="panel">
                 <form>
+                    <!-- ! SFX -->
                     <h3>Sound Effect</h3>
                     <label>
-                        <input type="checkbox" name="option1" checked> Play Interval Switch Sound
+                        <div class="sound-container">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="option1" checked>Interval Switch Sound
+                            </label>
+                            <div class="range-container">
+                                <input type="range" min="0.05" max="1" step="0.05" value="0.10" name="range1"
+                                    onchange="adjustVolume('sound1', this.value)">
+                            </div>
+                        </div>
                     </label>
                     <br>
+                    <!-- ! Ambience -->
                     <h3>Ambience</h3>
-                    <label> 
-                        <input type="checkbox" name="option2" onchange="toggleSound('sound2', this.checked)"> Play Rain
+                    <label>
+                        <div class="sound-container">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="option2"
+                                    onchange="toggleSound('sound2', this.checked)">Rain
+                            </label>
+                            <div class="range-container">
+                                <input type="range" min="0.05" max="1" step="0.05" value="0.5" name="range2"
+                                    onchange="adjustVolume('sound2', this.value)">
+                            </div>
+                        </div>
                     </label>
                     <br>
                     <label>
-                        <input type="checkbox" name="option3" onchange="toggleSound('sound3', this.checked)"> Play Fireplace
+                        <div class="sound-container">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="option3"
+                                    onchange="toggleSound('sound3', this.checked)">Fireplace
+                            </label>
+                            <div class="range-container">
+                                <input type="range" min="0.05" max="1" step="0.05" value="0.5" name="range3"
+                                    onchange="adjustVolume('sound3', this.value)">
+                            </div>
+                        </div>
                     </label>
                     <br>
                     <label>
-                        <input type="checkbox" name="option4" onchange="toggleSound('sound4', this.checked)"> Play Forest, Wind, and Birds
+                        <div class="sound-container">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="option4"
+                                    onchange="toggleSound('sound4', this.checked)">Forest, Wind, and Birds
+                            </label>
+                            <div class="range-container">
+                                <input type="range" min="0.05" max="1" step="0.05" value="0.5" name="range4"
+                                    onchange="adjustVolume('sound4', this.value)">
+                            </div>
+                        </div>
                     </label>
                     <br>
+                    <label>
+                        <div class="sound-container">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="option5" onchange="toggleSound('sound5', this.checked)">River Stream
+                            </label>
+                            <div class="range-container">
+                                <input type="range" min="0.05" max="1" step="0.05" value="0.25" name="range5"
+                                    onchange="adjustVolume('sound5', this.value)">
+                            </div>
+                        </div>
+                    </label>
+                    <br>
+                    <!-- ! Add onchange -->
+                    <!-- Color Themes -->
                     <h3>Color Themes</h3>
-                    
+                    <div class="color-theme-container">
+                        <label id="theme1">
+                            <input type="radio" name="colorTheme" value="theme1" checked
+                                onchange="applyColorTheme('Raki')"> Raki
+                        </label>
+                        <label id="theme2">
+                            <input type="radio" name="colorTheme" value="theme2" onchange="applyColorTheme('Lottie')">
+                            Lottie
+                        </label>
+                        <label id="theme3">
+                            <input type="radio" name="colorTheme" value="theme3" onchange="applyColorTheme('Nebi')">
+                            Nebi
+                        </label>
+                        <label id="theme4">
+                            <input type="radio" name="colorTheme" value="theme4" onchange="applyColorTheme('Chiaki')">
+                            Chiaki
+                        </label>
+                        <label id="theme5">
+                            <input type="radio" name="colorTheme" value="theme5" onchange="applyColorTheme('Miuna')">
+                            Miuna
+                        </label>
+                    </div>
                 </form>
-                
-                <audio id="sound1" src="https://cdn.pixabay.com/audio/2022/03/10/audio_c8c8a73467.mp3" preload="auto"></audio>
-                <audio id="sound2" src="https://cdn.pixabay.com/audio/2022/05/13/audio_257112ce99.mp3" preload="auto" loop></audio>
-                <audio id="sound3" src="https://cdn.pixabay.com/audio/2022/09/10/audio_113b247b69.mp3" preload="auto" loop></audio>
-                <audio id="sound4" src="https://cdn.pixabay.com/audio/2021/08/09/audio_1732f5639f.mp3" preload="auto" loop></audio>
-                
+
+                <audio id="sound1" src="https://cdn.pixabay.com/audio/2022/03/10/audio_c8c8a73467.mp3"
+                    preload="auto"></audio>
+                <audio id="sound2" src="https://cdn.pixabay.com/audio/2022/05/13/audio_257112ce99.mp3" preload="auto"
+                    loop></audio>
+                <audio id="sound3" src="https://cdn.pixabay.com/audio/2022/09/10/audio_113b247b69.mp3" preload="auto"
+                    loop></audio>
+                <audio id="sound4" src="https://cdn.pixabay.com/audio/2021/08/09/audio_1732f5639f.mp3" preload="auto"
+                    loop></audio>
+                <audio id="sound5" src="https://cdn.pixabay.com/audio/2022/02/07/audio_6666f206aa.mp3" preload="auto"
+                    loop></audio>
+
             </div>
             <!-- Main Content -->
         </div>
-    <!-- Page Wrapper -->
-    </div> 
-    
+        <!-- Page Wrapper -->
+    </div>
+
     <script src="script.js"></script>
 </body>
 

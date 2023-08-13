@@ -109,7 +109,7 @@ body {
     width: 160px;
 }
 
-.active, .accordion:hover {
+.active {
     color: rgb(200, 149, 111);
     border: 2px solid rgb(200, 149, 111);
 }
@@ -124,17 +124,64 @@ body {
 
 .panel {
     padding: 6px;
+    margin-bottom: 8px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
 
 .panel input[type="checkbox"] {
-    margin-bottom: 12px;
+    cursor: pointer;
 }
 
 .panel h3 {
     text-align: center;
     text-decoration: underline;
     margin: 10px 0;
+}
+
+.panel input[type="range"] {
+    width: 100px;
+    height: 3px;
+    background-color: rgb(175, 69, 95);
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sound-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-label {
+    width: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.range-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+/* ! Color Themes */
+.color-theme-container {
+    margin: 0 auto;
+    /* Center the container horizontally */
+    margin-bottom: 8px;
+    width: 200px;
+    max-height: 140px;
+    overflow-y: auto;
+    /* Enable vertical scrolling if content exceeds the container height */
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.color-theme-container label {
+    display: block;
+    padding: 8px 0;
 }

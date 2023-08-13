@@ -1,0 +1,32 @@
+{
+  "Raki": {
+    "background": "rgb(49, 33, 39)",
+    "text": "rgb(175, 69, 95)",
+    "border": "rgb(175, 69, 95, 0.2)",
+    "hover": "rgb(200, 149, 111)"
+  },
+  "Lottie": {
+    "background": "rgb(228, 159, 169)",
+    "text": "rgb(255, 255, 255)",
+    "border": "rgba(255, 255, 255, 0.2)",
+    "hover": "rgb(89, 76, 106)"
+  },
+  "Nebi": {
+    "background": "rgb(248, 139, 171)",
+    "text": "rgb(46, 49, 118)",
+    "border": "rgba(46, 49, 118, 0.2)",
+    "hover": "rgb(177, 52, 151)"
+  },
+  "Chiaki": {
+    "background": "rgb(49, 42, 72)",
+    "text": "rgb(147, 179, 232)",
+    "border": "rgba(147, 179, 232, 0.2)",
+    "hover": "rgb(235, 3, 137)"
+  },
+  "Miuna": {
+    "background": "rgb(218, 127, 80)",
+    "text": "rgb(255, 255, 255)",
+    "border": "rgba(255, 255, 255, 0.2)",
+    "hover": "rgb(255, 172, 153)"
+  }
+}

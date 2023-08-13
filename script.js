@@ -34,8 +34,8 @@ var isWorking = true;
 let intervalId;
 
 function updateProgressDisplay() {
-    if(s <= set && set != 0) {
-        progressDisplay.innerHTML = "["+(s + 1) + "/" + set +"]";
+    if (s <= set && set != 0) {
+        progressDisplay.innerHTML = "[" + (s + 1) + "/" + set + "]";
     } else {
         progressDisplay.innerHTML = "[&infin;]";
     }
@@ -64,16 +64,16 @@ function startTimer() {
                     clearInterval(intervalId); // Clear the interval when time reaches 0
 
                     // ! Switching to RESTING
-                    if(isWorking) {
-                        if(option1Checkbox.checked) playSFX(); 
+                    if (isWorking) {
+                        if (option1Checkbox.checked) playSFX();
                         isWorking = false;
                         sessionDisplay.innerHTML = "Resting";
                         time = restTime;
                         startTimer();
-                    } 
+                    }
                     // ! Switching to WORKING
                     else {
-                        if (option1Checkbox.checked) playSFX(); 
+                        if (option1Checkbox.checked) playSFX();
                         isWorking = true;
                         sessionDisplay.innerHTML = "Working";
                         time = workTime;
@@ -84,7 +84,7 @@ function startTimer() {
                             s++;
                             updateProgressDisplay();
                             if (s == set) {
-                                if (option1Checkbox.checked) playSFX(); 
+                                if (option1Checkbox.checked) playSFX();
                                 clearInterval(intervalId); // Stop the interval after the specified number of sets
                                 s = 0;
                                 sessionDisplay.innerHTML = "Done!"
@@ -118,7 +118,7 @@ function skipTimer() {
 
     // ! Switching to RESTING
     if (isWorking) {
-        if (option1Checkbox.checked) playSFX(); 
+        if (option1Checkbox.checked) playSFX();
         isWorking = false;
         sessionDisplay.innerHTML = "Resting";
         time = restTime;
@@ -126,7 +126,7 @@ function skipTimer() {
     }
     // ! Switching to WORKING
     else {
-        if (option1Checkbox.checked) playSFX(); 
+        if (option1Checkbox.checked) playSFX();
         isWorking = true;
         sessionDisplay.innerHTML = "Working";
         time = workTime;
@@ -137,7 +137,7 @@ function skipTimer() {
             s++;
             updateProgressDisplay();
             if (s == set) {
-                if (option1Checkbox.checked) playSFX(); 
+                if (option1Checkbox.checked) playSFX();
                 clearInterval(intervalId); // Stop the interval after the specified number of sets
                 s = 0;
                 sessionDisplay.innerHTML = "Done!"
@@ -229,7 +229,7 @@ setCountInput.addEventListener('keydown', function (event) {
 function playSFX() {
     sound1.currentTime = 0;
     sound1.play();
-    
+
     sound1.addEventListener('ended', function () {
         sound1.pause();
     });
@@ -243,6 +243,71 @@ function toggleSound(soundId, checked) {
     } else {
         sound.pause();
         sound.currentTime = 5;
+    }
+}
+
+function adjustVolumeForAll() {
+    const soundIds = ['sound1', 'sound2', 'sound3', 'sound4', 'sound5'];
+    const volumeIds = ['range1', 'range2', 'range3', 'range4', 'range5'];
+
+    for (let i = 0; i < soundIds.length; i++) {
+        const volumeElement = document.getElementsByName(volumeIds[i])[0]; // Get the input range element
+        const volume = volumeElement.value; // Get the value of the input range element
+        adjustVolume(soundIds[i], volume);
+    }
+}
+
+function adjustVolume(soundId, volume) {
+    const sound = document.getElementById(soundId);
+    sound.volume = parseFloat(volume);
+}
+
+function applyColorTheme(themeName) {
+    const selectedTheme = themesData[themeName];
+    if (selectedTheme) {
+        document.body.style.backgroundColor = selectedTheme.background;
+        document.body.style.color = selectedTheme.text;
+
+        const mainContent = document.getElementById('main-content');
+        mainContent.style.border = `2px solid ${selectedTheme.border}`;
+
+        // ! Buttons
+        const buttons = document.querySelectorAll('.button');
+        buttons.forEach(button => {
+            button.style.color = selectedTheme.text;
+            button.style.border = `2px solid ${selectedTheme.text}`;
+            button.style.backgroundColor = selectedTheme.background;
+
+            // Hovering over
+            button.addEventListener('mouseover', () => {
+                button.style.color = selectedTheme.hover;
+                button.style.border = `2px solid ${selectedTheme.hover}`;
+            });
+
+            // Restore after hovering
+            button.addEventListener('mouseout', () => {
+                button.style.color = selectedTheme.text;
+                button.style.border = `2px solid ${selectedTheme.text}`;
+            });
+
+            // 
+            button.addEventListener('mousedown', () => {
+                button.style.color = selectedTheme.text;
+                button.style.border = `2px solid ${selectedTheme.text}`;
+            });
+
+            button.addEventListener('mouseup', () => {
+                button.style.color = selectedTheme.hover;
+                button.style.border = `2px solid ${selectedTheme.hover}`;
+            });
+        });
+
+        // ! Active button
+        const activeElements = document.querySelectorAll('.active');
+        activeElements.forEach(element => {
+            activeElements.style.color = selectedTheme.hover;
+            activeElements.style.border = `2px solid ${selectedTheme.hover}`;
+        });
     }
 }
 
@@ -269,6 +334,17 @@ function init() {
             }
         });
     }
+
+    // Set up audio
+    adjustVolumeForAll()
+
+    // Fetch themes.json once when the page loads
+    fetch('themes.json')
+        .then(response => response.json())
+        .then(data => {
+            themesData = data;
+        })
+        .catch(error => console.error('Error loading themes:', error));
 }
 
 init();
